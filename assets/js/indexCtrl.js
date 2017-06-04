@@ -16,4 +16,8 @@ angular.module('bbApp')
         return $.inArray(parseInt($scope.carrier.carrier_id), code.carriers) > -1 &&
                 $.inArray(parseInt($scope.state.state_id), code.states) > -1 
     }
+
+    $scope.encode = function (code) {
+       return code.replace('#', '%23')
+    }
 }])
