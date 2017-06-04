@@ -8,7 +8,7 @@
     <title>Balance Buddy</title>
 
     <link href="assets/css/main.min.css" rel="stylesheet">
-
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,33 +24,16 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="#">Balance Buddy</a>
             </div>
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-cog fa-lg" style="color:cornflowerblue" aria-hidden="true"></i></a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#settingsModal"><i class="fa fa-cog fa-lg" style="color:cornflowerblue" aria-hidden="true"></i> SETTINGS</a></li>
                 </ul>
             </div>
         </div>
@@ -60,26 +43,19 @@
             <form>
                 <div class="col-sm-5 col-md-5 col-lg-5  col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
                     <div class="form-group">
-                        <select class="form-control" name="" id="" 
-                         ng-model="carrier"
-                         ng-options="carrier.carrier_name for carrier in data.carriers track by carrier.carrier_id">
+                        <label class="control-label text-uppercase text-muted" for="carrier">carrier</label>
+                        <select class="form-control" name="" id="carrier" ng-model="carrier" ng-options="carrier.carrier_name for carrier in data.carriers track by carrier.carrier_id">
                     </select>
-                        <span class="help-block text-uppercase">carrier</span>
                     </div>
-
                 </div>
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="form-group">
-                        <select class="form-control" name="" id="" 
-                        ng-model="state"
-                        ng-options="state.state_name for state in data.countries_states[0].states track by state.state_id">
+                        <label class="control-label text-uppercase text-muted" for="state">state</label>
+                        <select class="form-control" name="" id="state" 
+                        ng-model="state" ng-options="state.state_name for state in (data.countries_states | filter: getFilteredCountriesStates)[0].states track by state.state_id">
                     </select>
-                        <span class="help-block text-uppercase">state</span>
-
                     </div>
-
                 </div>
-
             </form>
         </div>
 
@@ -87,16 +63,39 @@
         <div class="row">
             <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
                 <ul class="list-group">
-                    <li class="list-group-item"
-                        ng-repeat="code in data.codes | filter: codeFilter">
-                            <h3 class="text-muted">{{code.info.title}} <a ng-href="{{encode(code.info.code)}}" class="btn btn-primary pull-right">{{code.info.code}}</a></h3>
-                                        <p>{{code.info.description}}</p> 
+                    <li class="list-group-item" ng-repeat="code in data.codes | filter: codeFilter">
+                        <h3 class="text-muted">{{code.info.title}} <a ng-href="{{encode(code.info.code)}}" class="btn btn-primary pull-right">{{code.info.code}}</a></h3>
+                        <p>{{code.info.description}}</p>
                         <!--<span class="badge">{{code.info.code}}</span> {{code.info.title}}-->
                     </li>
                 </ul>
             </div>
         </div>
+
+        <!--settings modal-->
+        <div class="modal fade" id="settingsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-uppercase">settings</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label text-uppercase text-muted" for="country">country</label>
+                        <select class="form-control" name="" id="country" 
+                        ng-model="country" ng-options="country.country_name for country in data.countries_states track by country.country_id"
+                        ng-change="countryChanged()">
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    </div>
+
+   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

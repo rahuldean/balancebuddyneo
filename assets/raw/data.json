@@ -2,11 +2,25 @@
   "countries_states": [
     {
       "country_id": 1,
-      "country_name": "india",
+      "country_name": "India",
       "states": [
         {
           "state_id": 1,
           "state_name": "Andhra Pradesh"
+        },
+        {
+          "state_id": 2,
+          "state_name": "TS"
+        }
+      ]
+    },
+    {
+      "country_id": 2,
+      "country_name": "USA",
+      "states": [
+        {
+          "state_id": 100,
+          "state_name": "Ohio"
         }
       ]
     }
