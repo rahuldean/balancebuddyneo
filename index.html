@@ -89,7 +89,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"
                         ng-repeat="code in data.codes | filter: codeFilter">
-                            <h3 class="text-muted">{{code.info.title}} <a ng-href="tel:{{encode(code.info.code)}}" class="btn btn-primary pull-right">{{code.info.code}}</a></h3>
+                            <h3 class="text-muted">{{code.info.title}} <a ng-href="{{encode(code.info.code)}}" class="btn btn-primary pull-right">{{code.info.code}}</a></h3>
                                         <p>{{code.info.description}}</p> 
                         <!--<span class="badge">{{code.info.code}}</span> {{code.info.title}}-->
                     </li>

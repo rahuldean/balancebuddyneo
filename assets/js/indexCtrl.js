@@ -18,6 +18,6 @@ angular.module('bbApp')
     }
 
     $scope.encode = function (code) {
-       return code.replace('#', '%23')
+       return 'tel:' + code.replace('#', '%23')
     }
 }])
