@@ -61,7 +61,9 @@
                 <div class="col-sm-5 col-md-5 col-lg-5  col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
                     <div class="form-group">
                         <select class="form-control" name="" id="">
-                        <option value="">India</option>
+                        <option ng:repeat="carrier in data.carriers" value="{{carrier.carrier_id}}">
+                            {{carrier.carrier_name}}
+                        </option>
                     </select>
                         <span class="help-block">Choose you're carrier.</span>
                     </div>
@@ -70,7 +72,9 @@
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="form-group">
                         <select class="form-control" name="" id="">
-                        <option value="">India</option>
+                        <option ng:repeat="state in data.countries_states[0].states" value="{{state.state_id}}">
+                            {{state.state_name}}
+                        </option>
                     </select>
                         <span class="help-block">Choose you're state.</span>
 
@@ -79,6 +83,18 @@
                 </div>
 
             </form>
+        </div>
+
+        <!--Codes-->
+        <div class="row">
+            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        ng-repeat="code in data.codes">
+                        <span class="badge">{{code.info.code}}</span> {{code.info.title}}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 

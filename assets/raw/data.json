@@ -32,6 +32,156 @@
         "title": "Balance check",
         "description": "Check you're balance"
       }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    },
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
     }
   ]
 }
