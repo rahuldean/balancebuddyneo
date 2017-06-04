@@ -1,0 +1,37 @@
+{
+  "countries_states": [
+    {
+      "country_id": 1,
+      "country_name": "india",
+      "states": [
+        {
+          "state_id": 1,
+          "state_name": "Andhra Pradesh"
+        }
+      ]
+    }
+  ],
+  "carriers": [
+    {
+      "carrier_id": 1,
+      "carrier_name": "Airtel"
+    }
+  ],
+  "codes": [
+    {
+      "sequence": 1,
+      "country": 1,
+      "states": [
+        1
+      ],
+      "carriers": [
+        1
+      ],
+      "info": {
+        "code": "*123#",
+        "title": "Balance check",
+        "description": "Check you're balance"
+      }
+    }
+  ]
+}
