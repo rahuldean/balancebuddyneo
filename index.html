@@ -60,23 +60,21 @@
             <form>
                 <div class="col-sm-5 col-md-5 col-lg-5  col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
                     <div class="form-group">
-                        <select class="form-control" name="" id="">
-                        <option ng:repeat="carrier in data.carriers" value="{{carrier.carrier_id}}">
-                            {{carrier.carrier_name}}
-                        </option>
+                        <select class="form-control" name="" id="" 
+                         ng-model="carrier"
+                         ng-options="carrier.carrier_name for carrier in data.carriers track by carrier.carrier_id">
                     </select>
-                        <span class="help-block">Choose you're carrier.</span>
+                        <span class="help-block text-uppercase">carrier</span>
                     </div>
 
                 </div>
                 <div class="col-sm-5 col-md-5 col-lg-5">
                     <div class="form-group">
-                        <select class="form-control" name="" id="">
-                        <option ng:repeat="state in data.countries_states[0].states" value="{{state.state_id}}">
-                            {{state.state_name}}
-                        </option>
+                        <select class="form-control" name="" id="" 
+                        ng-model="state"
+                        ng-options="state.state_name for state in data.countries_states[0].states track by state.state_id">
                     </select>
-                        <span class="help-block">Choose you're state.</span>
+                        <span class="help-block text-uppercase">state</span>
 
                     </div>
 
@@ -90,8 +88,10 @@
             <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
                 <ul class="list-group">
                     <li class="list-group-item"
-                        ng-repeat="code in data.codes">
-                        <span class="badge">{{code.info.code}}</span> {{code.info.title}}
+                        ng-repeat="code in data.codes | filter: codeFilter">
+                            <h3 class="text-muted">{{code.info.title}} <a href="tel:{{code.info.code}}" class="btn btn-primary pull-right">{{code.info.code}}</a></h3>
+                                        <p>{{code.info.description}}</p> 
+                        <!--<span class="badge">{{code.info.code}}</span> {{code.info.title}}-->
                     </li>
                 </ul>
             </div>

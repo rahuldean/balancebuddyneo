@@ -15,6 +15,10 @@
     {
       "carrier_id": 1,
       "carrier_name": "Airtel"
+    },
+    {
+      "carrier_id": 2,
+      "carrier_name": "Aircel"
     }
   ],
   "codes": [
@@ -25,7 +29,7 @@
         1
       ],
       "carriers": [
-        1
+        1,2
       ],
       "info": {
         "code": "*123#",
